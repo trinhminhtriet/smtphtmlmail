@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implements hook_enable().
+ */
+function smtphtmlmail_enable()
+{
+    $mail_system = variable_get('mail_system', mailsystem_defaults());
+    $mail_system[mailsystem_default_id()] = 'SmtpHTMLMailSystem';
+    variable_set('mail_system', $mail_system);
+}
+
+/**
+ * Implements hook_disable().
+ */
+function smtphtmlmail_disable()
+{
+    $mail_system = variable_get('mail_system', mailsystem_defaults());
+    $mail_system[mailsystem_default_id()] = mailsystem_default_value();
+    variable_set('mail_system', $mail_system);
+}

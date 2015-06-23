@@ -1,0 +1,8 @@
+name = SMTP send HTML Mail
+description = Using SMTP send HTML mail
+package = Mail
+core = 7.x
+files[] = smtphtmlmail.mail.inc
+dependencies[] = mailsystem
+dependencies[] = smtp
+dependencies[] = htmlmail
